@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en-GB"> <!-- Updated for UK SEO -->
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brandvalley — The UK's Performance UGC Marketplace</title>
+    <title>Brandvalley — Performance UGC Marketplace UK</title>
     
-    <!-- Updated Fonts for British Audience: Baskerville for Heritage, DM Sans for Modernity -->
+    <meta name="description" content="Brandvalley: The UK's first performance-only UGC marketplace. Brands pay per view, creators earn per view.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;700&family=Syne:wght@800&display=swap" rel="stylesheet">
@@ -14,11 +15,9 @@
         :root {
             --ink: #0a0a0f;
             --ink-soft: #3a3a4a;
-            --cream: #f8f6f2; /* Slightly warmer, premium British cream */
-            --cream-dark: #ede9df;
+            --cream: #f8f6f2; 
             --gold: #c9a84c;
-            --purple: #1e1060; /* Deeper "Trust Blue/Purple" */
-            --purple-mid: #2d1f6e;
+            --purple: #1e1060; 
             --white: #ffffff;
             --border: rgba(10,10,15,0.08);
         }
@@ -34,12 +33,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, .section-title {
-            font-family: 'Libre Baskerville', serif; /* Authority & Heritage */
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
             letter-spacing: -0.01em;
         }
 
-        /* ── NAV ── */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 100;
             padding: 0 40px;
@@ -48,7 +46,7 @@
             transition: all 0.3s ease;
         }
         nav.scrolled {
-            background: rgba(248, 246, 242, 0.9);
+            background: rgba(248, 246, 242, 0.95);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
             height: 64px;
@@ -59,66 +57,64 @@
             color: var(--ink); text-decoration: none;
         }
         .nav-logo span { color: var(--gold); }
-        .nav-links { display: flex; gap: 12px; }
         
-        .nav-btn {
-            font-size: 13px; font-weight: 700;
-            padding: 10px 20px; border-radius: 6px;
-            text-decoration: none; transition: all 0.2s;
+        .nav-btn-solid { 
+            background: var(--purple); 
+            color: var(--white); 
+            font-size: 13px; 
+            font-weight: 700;
+            padding: 10px 20px; 
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
         }
-        .nav-btn-solid { background: var(--purple); color: var(--white); }
-        .nav-btn-solid:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(30,16,96,0.2); }
 
-        /* ── HERO ── */
         .hero {
-            padding: 160px 24px 100px;
+            padding: 160px 24px 80px;
             text-align: center;
-            max-width: 1000px; margin: 0 auto;
-        }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--white); border: 1px solid var(--border);
-            padding: 8px 16px; border-radius: 100px;
-            font-size: 12px; font-weight: 700; color: var(--purple);
-            margin-bottom: 32px;
+            max-width: 900px; margin: 0 auto;
         }
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
             line-height: 1.1; margin-bottom: 24px; color: var(--purple);
         }
         .hero h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
-        
-        /* ── HOW TABS FIX ── */
+
+        .waitlist-box {
+            max-width: 480px; margin: 0 auto 100px;
+            background: var(--white); padding: 40px;
+            border-radius: 16px; border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
         .how-tabs {
-            display: flex; justify-content: center; margin-bottom: 40px;
+            display: flex; justify-content: center; margin-bottom: 30px;
+            background: var(--cream); padding: 4px; border-radius: 10px;
         }
         .how-tab {
-            padding: 12px 32px; cursor: pointer; border: 1px solid var(--border);
-            background: var(--white); font-weight: 700; transition: 0.3s;
+            flex: 1; text-align: center; padding: 12px; 
+            cursor: pointer; font-weight: 700; font-size: 14px;
+            border-radius: 8px; transition: 0.3s; color: var(--ink-soft);
         }
-        .how-tab.active { background: var(--purple); color: var(--white); border-color: var(--purple); }
-        .how-tab:first-child { border-radius: 8px 0 0 8px; }
-        .how-tab:last-child { border-radius: 0 8px 8px 0; }
+        .how-tab.active { background: var(--white); color: var(--purple); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
 
-        .how-steps { display: none; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .how-steps.active { display: grid; }
-
-        /* ── FORM FIXES ── */
-        .hidden { display: none !important; }
-        .waitlist-box {
-            max-width: 500px; margin: 60px auto;
-            background: var(--white); padding: 40px;
-            border-radius: 12px; border: 1px solid var(--border);
+        .form-field { margin-bottom: 20px; }
+        .form-field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+        .form-field input {
+            width: 100%; padding: 14px; border: 1px solid var(--border); 
+            border-radius: 8px; font-family: 'DM Sans', sans-serif; outline-color: var(--purple);
         }
         .submit-btn {
             width: 100%; padding: 16px; background: var(--purple);
             color: var(--white); border: none; border-radius: 8px;
-            font-weight: 700; cursor: pointer; font-size: 16px;
+            font-weight: 700; cursor: pointer; font-size: 16px; transition: 0.2s;
         }
+        .submit-btn:hover { background: #2d1f6e; transform: translateY(-1px); }
 
-        @media (max-width: 768px) {
-            .how-steps.active { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.8rem; }
+        .hidden { display: none !important; }
+
+        @media (max-width: 600px) {
+            nav { padding: 0 20px; }
+            .waitlist-box { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -126,74 +122,71 @@
 
 <nav id="navbar">
     <a class="nav-logo" href="#">Brand<span>valley</span></a>
-    <div class="nav-links">
-        <a href="#waitlist" class="nav-btn nav-btn-solid" onclick="setRole('brand')">Early Access</a>
-    </div>
+    <a href="#waitlist" class="nav-btn-solid">Get Early Access</a>
 </nav>
 
 <section class="hero">
-    <div class="hero-badge">🇬🇧 UK Early Access Now Open</div>
     <h1>The smarter way to run <em>influencer marketing</em></h1>
-    <p style="max-width:600px; margin: 0 auto 40px; color: var(--ink-soft);">Brands pay per 1,000 views. Creators earn per view. No flat fees. No guesswork.</p>
-    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="#waitlist" class="nav-btn nav-btn-solid" style="padding: 16px 32px;" onclick="setRole('brand')">I'm a Brand</a>
-        <a href="#waitlist" class="nav-btn" style="padding: 16px 32px; border: 1px solid var(--border);" onclick="setRole('creator')">I'm a Creator</a>
-    </div>
+    <p style="color: var(--ink-soft); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Brandvalley is the UK's first performance-only marketplace. Brands pay for results, creators earn for views. No flat fees. No gatekeeping.
+    </p>
 </section>
 
-<section class="waitlist-section" id="waitlist">
+<section id="waitlist">
     <div class="waitlist-box">
-        <h2 style="margin-bottom:20px; text-align:center;">Join the Waitlist</h2>
+        <h3 style="margin-bottom: 25px; text-align: center;">Join the Brandvalley Waitlist</h3>
+        
         <form id="signup-form">
-            <div class="how-tabs" style="margin-bottom:24px;">
+            <div class="how-tabs">
                 <input type="radio" name="role" id="role-brand" value="brand" checked style="display:none;">
-                <div class="how-tab active" id="tab-brand" onclick="setRole('brand')">Brand</div>
+                <div class="how-tab active" id="tab-brand" onclick="setRole('brand')">I'm a Brand</div>
                 
                 <input type="radio" name="role" id="role-creator" value="creator" style="display:none;">
-                <div class="how-tab" id="tab-creator" onclick="setRole('creator')">Creator</div>
+                <div class="how-tab" id="tab-creator" onclick="setRole('creator')">I'm a Creator</div>
             </div>
 
-            <div style="margin-bottom:15px;">
-                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:5px;">Full Name</label>
-                <input type="text" id="name" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:6px;" required>
+            <div class="form-field">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
             </div>
 
-            <div style="margin-bottom:15px;">
-                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:5px;">Email</label>
-                <input type="email" id="email" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:6px;" required>
+            <div class="form-field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
             </div>
 
-            <div id="company-field" style="margin-bottom:20px;">
-                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:5px;">Brand/Company Name</label>
-                <input type="text" id="company" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:6px;" required>
+            <div class="form-field" id="company-field">
+                <label for="company">Brand / Company Name</label>
+                <input type="text" id="company" name="company" placeholder="e.g. Brandvalley Ltd" required>
             </div>
 
             <button type="submit" class="submit-btn" id="submit-btn">Secure My Spot →</button>
         </form>
 
-        <div id="thank-you" class="hidden" style="text-align:center; padding:20px;">
-            <h3 style="font-family:'Libre Baskerville';">You're on the list!</h3>
-            <p>We'll be in touch with your invitation shortly.</p>
+        <div id="thank-you" class="hidden" style="text-align: center; padding: 20px 0;">
+            <div style="font-size: 40px; margin-bottom: 10px;">🎉</div>
+            <h3>You're on the list!</h3>
+            <p style="font-size: 14px; color: var(--ink-soft); margin-top: 10px;">
+                Welcome to Brandvalley. We'll be in touch regarding your invitation shortly.
+            </p>
         </div>
     </div>
 </section>
 
 <script>
-    // Navbar Scroll
+    // 1. Scroll-sensitive Navigation
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
     });
 
-    // Unified Role Switcher (Fixes the logic bug)
+    // 2. Interactive Role Switcher
     function setRole(role) {
-        // Update Radios
         document.getElementById('role-' + role).checked = true;
         
-        // Update Tab Visuals
-        document.querySelectorAll('.how-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-brand').classList.remove('active');
+        document.getElementById('tab-creator').classList.remove('active');
         document.getElementById('tab-' + role).classList.add('active');
 
-        // Toggle Company Field
         const field = document.getElementById('company-field');
         const input = document.getElementById('company');
         
@@ -203,13 +196,16 @@
         } else {
             field.classList.add('hidden');
             input.removeAttribute('required');
+            input.value = ''; 
         }
     }
 
-    // Form Submission
+    // 3. Form Submission Logic
     document.getElementById('signup-form').addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = document.getElementById('submit-btn');
+        const form = this;
+        
         btn.textContent = 'Registering...';
         btn.disabled = true;
 
@@ -221,20 +217,21 @@
         };
 
         try {
-            const res = await fetch('https://formspree.io/f/mbdwlkww', {
+            // FIXED: Using your provided ID xqenajbz
+            const res = await fetch('https://formspree.io/f/xqenajbz', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(data)
             });
+            
             if (res.ok) {
-                this.classList.add('hidden');
+                form.classList.add('hidden');
                 document.getElementById('thank-you').classList.remove('hidden');
             } else {
-                btn.textContent = 'Error - Try Again';
-                btn.disabled = false;
+                throw new Error();
             }
         } catch {
-            btn.textContent = 'Connection Error';
+            btn.textContent = 'Error - Please try again';
             btn.disabled = false;
         }
     });
