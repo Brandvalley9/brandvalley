@@ -1,0 +1,54 @@
+<script>
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    function toggleCompany(show) {
+        const field = document.getElementById('company-field');
+        const input = document.getElementById('company');
+        if (show) {
+            field.classList.remove('hidden');
+            input.setAttribute('required', 'required');
+        } else {
+            field.classList.add('hidden');
+            input.removeAttribute('required');
+        }
+    }
+
+    function setRole(role) {
+        const radio = document.getElementById('role-' + role);
+        if (radio) { radio.checked = true; toggleCompany(role === 'brand'); }
+    }
+
+    document.getElementById('signup-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        btn.textContent = 'Submitting...';
+        btn.disabled = true;
+
+        const data = {
+            role: document.querySelector('input[name="role"]:checked').value,
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            company: document.getElementById('company').value,
+        };
+
+        try {
+            const res = await fetch('https://formspree.io/f/mbdwlkww', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                this.classList.add('hidden');
+                document.getElementById('thank-you').classList.remove('hidden');
+            } else {
+                btn.textContent = 'Something went wrong — try again';
+                btn.disabled = false;
+            }
+        } catch {
+            btn.textContent = 'Connection error — try again';
+            btn.disabled = false;
+        }
+    });
+</script>
