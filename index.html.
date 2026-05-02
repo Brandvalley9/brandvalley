@@ -1,33 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB"> <!-- Updated for UK SEO -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brandvalley — The UK's Performance UGC Marketplace</title>
-    <meta name="description" content="Brands pay per view. Creators earn per view. The UK's first performance-only UGC marketplace — no flat fees, no guesswork, just results.">
-    <meta property="og:title" content="Brandvalley — Brands pay per view. Creators earn per view.">
-    <meta property="og:description" content="The UK's first performance-only UGC marketplace. Zero upfront cost for brands. Real earnings for creators.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://brandvalley.co.uk">
-    <meta name="twitter:card" content="summary_large_image">
-
+    
+    <!-- Updated Fonts for British Audience: Baskerville for Heritage, DM Sans for Modernity -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;700&family=Syne:wght@800&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --ink: #0a0a0f;
             --ink-soft: #3a3a4a;
-            --cream: #f5f2eb;
+            --cream: #f8f6f2; /* Slightly warmer, premium British cream */
             --cream-dark: #ede9df;
             --gold: #c9a84c;
-            --gold-light: #e8c97a;
-            --purple: #2d1f6e;
-            --purple-mid: #4a35a8;
-            --purple-light: #7c6fd4;
+            --purple: #1e1060; /* Deeper "Trust Blue/Purple" */
+            --purple-mid: #2d1f6e;
             --white: #ffffff;
-            --border: rgba(10,10,15,0.1);
+            --border: rgba(10,10,15,0.08);
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,8 +30,13 @@
             font-family: 'DM Sans', sans-serif;
             background: var(--cream);
             color: var(--ink);
-            overflow-x: hidden;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, .section-title {
+            font-family: 'Libre Baskerville', serif; /* Authority & Heritage */
+            letter-spacing: -0.01em;
         }
 
         /* ── NAV ── */
@@ -46,667 +44,160 @@
             position: fixed; top: 0; width: 100%; z-index: 100;
             padding: 0 40px;
             display: flex; align-items: center; justify-content: space-between;
-            height: 64px;
-            background: transparent;
-            transition: background 0.3s, border-bottom 0.3s;
+            height: 72px;
+            transition: all 0.3s ease;
         }
         nav.scrolled {
-            background: rgba(245,242,235,0.95);
-            backdrop-filter: blur(12px);
+            background: rgba(248, 246, 242, 0.9);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
+            height: 64px;
         }
         .nav-logo {
             font-family: 'Syne', sans-serif;
-            font-size: 1.25rem; font-weight: 800;
-            color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
+            font-size: 1.4rem; font-weight: 800;
+            color: var(--ink); text-decoration: none;
         }
-        .nav-logo span { color: var(--purple-mid); }
-        .nav-links { display: flex; gap: 8px; align-items: center; }
+        .nav-logo span { color: var(--gold); }
+        .nav-links { display: flex; gap: 12px; }
+        
         .nav-btn {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 13px; font-weight: 600;
-            padding: 8px 18px; border-radius: 6px;
-            text-decoration: none; cursor: pointer; border: none;
-            transition: all 0.2s;
+            font-size: 13px; font-weight: 700;
+            padding: 10px 20px; border-radius: 6px;
+            text-decoration: none; transition: all 0.2s;
         }
-        .nav-btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
-        .nav-btn-ghost:hover { background: var(--cream-dark); }
         .nav-btn-solid { background: var(--purple); color: var(--white); }
-        .nav-btn-solid:hover { background: var(--purple-mid); transform: translateY(-1px); }
+        .nav-btn-solid:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(30,16,96,0.2); }
 
         /* ── HERO ── */
         .hero {
-            min-height: 100vh;
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
+            padding: 160px 24px 100px;
             text-align: center;
-            padding: 120px 24px 80px;
-            position: relative;
-            overflow: hidden;
+            max-width: 1000px; margin: 0 auto;
         }
-
-        /* decorative background circles */
-        .hero::before {
-            content: '';
-            position: absolute; top: -200px; right: -200px;
-            width: 600px; height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(45,31,110,0.12) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero::after {
-            content: '';
-            position: absolute; bottom: -150px; left: -150px;
-            width: 500px; height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            padding: 6px 16px 6px 8px;
-            font-size: 12px; font-weight: 600; color: var(--purple);
-            margin-bottom: 36px;
-            animation: fadeUp 0.6s ease both;
-        }
-        .hero-badge-dot {
-            width: 8px; height: 8px; border-radius: 50%;
-            background: #22c55e;
-            box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
-            50% { box-shadow: 0 0 0 6px rgba(34,197,94,0.1); }
-        }
-
-        .hero h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.03em;
-            color: var(--ink);
-            max-width: 800px;
-            margin-bottom: 28px;
-            animation: fadeUp 0.6s 0.1s ease both;
-        }
-        .hero h1 em {
-            font-style: normal;
-            color: var(--purple-mid);
-            position: relative;
-        }
-        .hero h1 em::after {
-            content: '';
-            position: absolute; bottom: 4px; left: 0; right: 0; height: 3px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
-
-        .hero-sub {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            color: var(--ink-soft);
-            max-width: 560px;
-            margin-bottom: 48px;
-            line-height: 1.7;
-            animation: fadeUp 0.6s 0.2s ease both;
-        }
-
-        .hero-ctas {
-            display: flex; gap: 12px; flex-wrap: wrap;
-            justify-content: center;
-            animation: fadeUp 0.6s 0.3s ease both;
-        }
-        .cta-primary {
-            background: var(--purple);
-            color: var(--white);
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 15px; font-weight: 600;
-            text-decoration: none; border: none; cursor: pointer;
-            transition: all 0.2s;
-            display: inline-block;
-        }
-        .cta-primary:hover { background: var(--purple-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,31,110,0.25); }
-        .cta-secondary {
-            background: var(--white);
-            color: var(--ink);
-            padding: 14px 28px;
-            border-radius: 8px; border: 1.5px solid var(--border);
-            font-family: 'DM Sans', sans-serif;
-            font-size: 15px; font-weight: 600;
-            text-decoration: none; cursor: pointer;
-            transition: all 0.2s;
-            display: inline-block;
-        }
-        .cta-secondary:hover { background: var(--cream-dark); transform: translateY(-2px); }
-
-        .hero-proof {
-            margin-top: 60px;
-            font-size: 12px; color: var(--ink-soft);
-            letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500;
-            animation: fadeUp 0.6s 0.4s ease both;
-        }
-        .hero-proof-logos {
-            display: flex; align-items: center; justify-content: center; gap: 32px;
-            margin-top: 16px; flex-wrap: wrap;
-            animation: fadeUp 0.6s 0.5s ease both;
-        }
-        .platform-chip {
-            display: flex; align-items: center; gap: 8px;
             background: var(--white); border: 1px solid var(--border);
-            border-radius: 100px; padding: 7px 16px;
-            font-size: 13px; font-weight: 600; color: var(--ink);
+            padding: 8px 16px; border-radius: 100px;
+            font-size: 12px; font-weight: 700; color: var(--purple);
+            margin-bottom: 32px;
         }
-        .platform-chip .dot { width: 8px; height: 8px; border-radius: 50%; }
-        .dot-tiktok { background: #010101; }
-        .dot-ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .dot-yt { background: #ff0000; }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1; margin-bottom: 24px; color: var(--purple);
         }
-
-        /* ── STATS BAR ── */
-        .stats-bar {
-            background: var(--purple);
-            padding: 40px 24px;
-        }
-        .stats-inner {
-            max-width: 900px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 24px; text-align: center;
-        }
-        .stat-val {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.2rem; font-weight: 800;
-            color: var(--white); letter-spacing: -0.03em;
-        }
-        .stat-label { font-size: 12px; color: #a78bfa; font-weight: 500; margin-top: 4px; }
-
-        /* ── SECTION BASE ── */
-        .section { padding: 100px 24px; }
-        .section-inner { max-width: 1060px; margin: 0 auto; }
-        .section-tag {
-            font-size: 11px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.1em; color: var(--gold);
-            display: block; margin-bottom: 14px;
-        }
-        .section-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 800; line-height: 1.15;
-            letter-spacing: -0.02em; color: var(--ink);
-            margin-bottom: 16px;
-        }
-        .section-sub {
-            font-size: 1.05rem; color: var(--ink-soft);
-            line-height: 1.7; max-width: 540px; margin-bottom: 56px;
-        }
-
-        /* ── PROBLEM SECTION ── */
-        .problem-section { background: var(--ink); }
-        .problem-section .section-tag { color: var(--gold); }
-        .problem-section .section-title { color: var(--white); }
-        .problem-section .section-sub { color: rgba(255,255,255,0.6); }
-        .problem-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 2px; border: 2px solid rgba(255,255,255,0.06);
-            border-radius: 16px; overflow: hidden;
-        }
-        .problem-card {
-            background: rgba(255,255,255,0.03);
-            padding: 36px;
-            border: 1px solid rgba(255,255,255,0.06);
-            transition: background 0.2s;
-        }
-        .problem-card:hover { background: rgba(255,255,255,0.06); }
-        .problem-label {
-            font-size: 11px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.08em; margin-bottom: 12px;
-        }
-        .problem-label.brand { color: var(--gold); }
-        .problem-label.creator { color: var(--purple-light); }
-        .problem-card h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; color: var(--white); margin-bottom: 10px; font-weight: 800; }
-        .problem-card p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
-
-        /* ── HOW IT WORKS ── */
-        .how-section { background: var(--cream); }
+        .hero h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
+        
+        /* ── HOW TABS FIX ── */
         .how-tabs {
-            display: flex; gap: 0;
-            border: 1.5px solid var(--border);
-            border-radius: 10px; overflow: hidden;
-            margin-bottom: 48px; width: fit-content;
+            display: flex; justify-content: center; margin-bottom: 40px;
         }
         .how-tab {
-            padding: 10px 28px; font-size: 14px; font-weight: 600;
-            background: transparent; color: var(--ink-soft);
-            border: none; cursor: pointer;
-            transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+            padding: 12px 32px; cursor: pointer; border: 1px solid var(--border);
+            background: var(--white); font-weight: 700; transition: 0.3s;
         }
-        .how-tab.active { background: var(--ink); color: var(--white); }
-        .how-tab:first-child { border-right: 1.5px solid var(--border); }
+        .how-tab.active { background: var(--purple); color: var(--white); border-color: var(--purple); }
+        .how-tab:first-child { border-radius: 8px 0 0 8px; }
+        .how-tab:last-child { border-radius: 0 8px 8px 0; }
 
-        .how-steps { display: none; }
-        .how-steps.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .how-steps { display: none; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .how-steps.active { display: grid; }
 
-        .step-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 14px; padding: 36px;
-            position: relative; overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .step-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-        .step-card::before {
-            content: attr(data-num);
-            position: absolute; top: -10px; right: 16px;
-            font-family: 'Syne', sans-serif;
-            font-size: 5rem; font-weight: 800;
-            color: var(--cream); line-height: 1;
-            pointer-events: none; user-select: none;
-        }
-        .step-icon { font-size: 1.8rem; margin-bottom: 20px; }
-        .step-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
-        .step-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
-
-        /* ── WHY SECTION ── */
-        .why-section { background: var(--cream-dark); }
-        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .why-card {
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 14px; padding: 32px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .why-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
-        .why-icon {
-            width: 48px; height: 48px; border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; margin-bottom: 20px;
-        }
-        .why-icon-purple { background: #ede9fe; }
-        .why-icon-gold   { background: #fef3c7; }
-        .why-icon-green  { background: #dcfce7; }
-        .why-card h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
-        .why-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
-
-        /* ── COMPLIANCE BANNER ── */
-        .compliance-banner {
-            background: linear-gradient(135deg, var(--purple) 0%, #1e1060 100%);
-            padding: 80px 24px; text-align: center;
-        }
-        .compliance-banner h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-            font-weight: 800; color: var(--white);
-            margin-bottom: 16px; letter-spacing: -0.02em;
-        }
-        .compliance-banner p { font-size: 1rem; color: #c4b5fd; max-width: 500px; margin: 0 auto; line-height: 1.7; }
-        .compliance-tags { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
-        .compliance-tag {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: var(--white); font-size: 13px; font-weight: 600;
-            padding: 6px 16px; border-radius: 100px;
-        }
-
-        /* ── WAITLIST ── */
-        .waitlist-section { background: var(--cream); padding: 100px 24px; }
+        /* ── FORM FIXES ── */
+        .hidden { display: none !important; }
         .waitlist-box {
-            max-width: 480px; margin: 0 auto;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 20px; padding: 48px;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+            max-width: 500px; margin: 60px auto;
+            background: var(--white); padding: 40px;
+            border-radius: 12px; border: 1px solid var(--border);
         }
-        .waitlist-box h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.8rem; font-weight: 800;
-            color: var(--ink); margin-bottom: 6px; letter-spacing: -0.02em;
-        }
-        .waitlist-box p { font-size: 14px; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.6; }
-
-        .role-toggle {
-            display: flex; background: var(--cream);
-            border-radius: 8px; padding: 4px; margin-bottom: 24px;
-        }
-        .role-toggle input[type="radio"] { display: none; }
-        .role-toggle label {
-            flex: 1; text-align: center;
-            padding: 9px; border-radius: 6px;
-            font-size: 14px; font-weight: 600; color: var(--ink-soft);
-            cursor: pointer; transition: all 0.2s; margin: 0; display: block;
-        }
-        .role-toggle input[type="radio"]:checked + label {
-            background: var(--white); color: var(--ink);
-            box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-        }
-
-        .form-field { margin-bottom: 16px; }
-        .form-field label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
-        .form-field input {
-            width: 100%; padding: 11px 14px;
-            border: 1.5px solid var(--border); border-radius: 8px;
-            font-family: 'DM Sans', sans-serif; font-size: 14px;
-            color: var(--ink); outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            background: var(--white);
-        }
-        .form-field input:focus {
-            border-color: var(--purple-mid);
-            box-shadow: 0 0 0 3px rgba(74,53,168,0.12);
-        }
-        .hidden { display: none; }
         .submit-btn {
-            width: 100%; padding: 14px;
-            background: var(--purple); color: var(--white);
-            border: none; border-radius: 8px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 15px; font-weight: 600;
-            cursor: pointer; margin-top: 8px;
-            transition: all 0.2s;
+            width: 100%; padding: 16px; background: var(--purple);
+            color: var(--white); border: none; border-radius: 8px;
+            font-weight: 700; cursor: pointer; font-size: 16px;
         }
-        .submit-btn:hover:not(:disabled) { background: var(--purple-mid); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(45,31,110,0.3); }
-        .submit-btn:disabled { background: #9ca3af; cursor: not-allowed; transform: none; }
-        .form-note { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 12px; }
 
-        #thank-you { text-align: center; padding: 16px 0; }
-        #thank-you .ty-emoji { font-size: 3rem; margin-bottom: 16px; }
-        #thank-you h3 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
-        #thank-you p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
-
-        /* ── FOOTER ── */
-        footer {
-            background: var(--ink);
-            padding: 40px 24px;
-        }
-        .footer-inner {
-            max-width: 1060px; margin: 0 auto;
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 16px;
-        }
-        .footer-logo {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.1rem; font-weight: 800;
-            color: var(--white); text-decoration: none; letter-spacing: -0.02em;
-        }
-        .footer-logo span { color: var(--purple-light); }
-        footer p { font-size: 13px; color: rgba(255,255,255,0.4); }
-        .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.15s; }
-        .footer-links a:hover { color: var(--white); }
-
-        /* ── MOBILE ── */
         @media (max-width: 768px) {
-            nav { padding: 0 20px; }
-            .nav-links .nav-btn-ghost { display: none; }
-            .problem-grid { grid-template-columns: 1fr; }
             .how-steps.active { grid-template-columns: 1fr; }
-            .stats-inner { grid-template-columns: repeat(2, 1fr); }
-            .why-grid { grid-template-columns: 1fr; }
-            .section { padding: 64px 20px; }
-            .waitlist-box { padding: 28px 20px; }
-            .footer-inner { flex-direction: column; text-align: center; }
+            .hero h1 { font-size: 2.8rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
     <a class="nav-logo" href="#">Brand<span>valley</span></a>
     <div class="nav-links">
-        <a href="#how" class="nav-btn nav-btn-ghost">How it works</a>
-        <a href="#waitlist" class="nav-btn nav-btn-solid" onclick="setRole('brand')">Get early access</a>
+        <a href="#waitlist" class="nav-btn nav-btn-solid" onclick="setRole('brand')">Early Access</a>
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-    <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        Now accepting early access — UK only
-    </div>
-    <h1>
-        The smarter way to<br>
-        run <em>influencer marketing</em><br>
-        in the UK
-    </h1>
-    <p class="hero-sub">
-        Brands pay per 1,000 views — not per post, not per follower. Creators earn every time someone watches. No flat fees. No guesswork. No wasted budget.
-    </p>
-    <div class="hero-ctas">
-        <a href="#waitlist" class="cta-primary" onclick="setRole('brand')">I'm a Brand — join waitlist</a>
-        <a href="#waitlist" class="cta-secondary" onclick="setRole('creator')">I'm a Creator</a>
-    </div>
-    <p class="hero-proof">Works across all major platforms</p>
-    <div class="hero-proof-logos">
-        <div class="platform-chip"><span class="dot dot-tiktok"></span>TikTok</div>
-        <div class="platform-chip"><span class="dot dot-ig"></span>Instagram Reels</div>
-        <div class="platform-chip"><span class="dot dot-yt"></span>YouTube Shorts</div>
+    <div class="hero-badge">🇬🇧 UK Early Access Now Open</div>
+    <h1>The smarter way to run <em>influencer marketing</em></h1>
+    <p style="max-width:600px; margin: 0 auto 40px; color: var(--ink-soft);">Brands pay per 1,000 views. Creators earn per view. No flat fees. No guesswork.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="#waitlist" class="nav-btn nav-btn-solid" style="padding: 16px 32px;" onclick="setRole('brand')">I'm a Brand</a>
+        <a href="#waitlist" class="nav-btn" style="padding: 16px 32px; border: 1px solid var(--border);" onclick="setRole('creator')">I'm a Creator</a>
     </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-bar">
-    <div class="stats-inner">
-        <div><div class="stat-val">£0</div><div class="stat-label">Upfront brand spend</div></div>
-        <div><div class="stat-val">CPM</div><div class="stat-label">Pay per 1,000 real views</div></div>
-        <div><div class="stat-val">100%</div><div class="stat-label">ASA compliant by default</div></div>
-        <div><div class="stat-val">3×</div><div class="stat-label">Platforms in one dashboard</div></div>
-    </div>
-</div>
-
-<!-- PROBLEM -->
-<section class="section problem-section">
-    <div class="section-inner">
-        <span class="section-tag">The problem we're solving</span>
-        <h2 class="section-title" style="color:var(--white);">Influencer marketing is broken<br>for everyone</h2>
-        <p class="section-sub">Brands spend thousands on posts that flop. Creators spend hours negotiating deals that go nowhere. There's a better way — and it's already working in the US.</p>
-        <div class="problem-grid">
-            <div class="problem-card">
-                <p class="problem-label brand">For Brands</p>
-                <h3>You're paying for promises, not results</h3>
-                <p>Traditional influencer marketing charges per post or per follower. A creator with 100k followers might deliver 200 views. You've already paid. There's no refund.</p>
-            </div>
-            <div class="problem-card">
-                <p class="problem-label creator">For Creators</p>
-                <h3>You're undervalued unless you're already famous</h3>
-                <p>Without 10k+ followers, brands won't talk to you. You spend more time pitching than creating. And when you do land a deal, negotiating a fair rate is exhausting.</p>
-            </div>
-            <div class="problem-card">
-                <p class="problem-label brand">The old model</p>
-                <h3>Flat fees with zero accountability</h3>
-                <p>Agencies take 30–50% of your budget. Performance is unmeasured. You have no idea if your £5,000 campaign generated £500 or £50,000 in value.</p>
-            </div>
-            <div class="problem-card">
-                <p class="problem-label creator">The reality for micro-creators</p>
-                <h3>Great content. No path to income.</h3>
-                <p>You make content people love. But without a huge following, there's no clear way to monetise. TikTok's creator fund barely covers coffee. Brand deals feel out of reach.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section how-section" id="how">
-    <div class="section-inner">
-        <span class="section-tag">How it works</span>
-        <h2 class="section-title">Simple for both sides</h2>
-        <p class="section-sub">Brandvalley connects brands who need content with creators who make it — and everyone only wins when views happen.</p>
-
-        <div class="how-tabs">
-            <button class="how-tab active" onclick="switchHow('brand', this)">For Brands</button>
-            <button class="how-tab" onclick="switchHow('creator', this)">For Creators</button>
-        </div>
-
-        <div class="how-steps active" id="how-brand">
-            <div class="step-card" data-num="1">
-                <div class="step-icon">📋</div>
-                <h3>Post a bounty</h3>
-                <p>List your product and set a CPM — the price you'll pay per 1,000 verified views. You control your budget entirely. No hidden fees, no minimums.</p>
-            </div>
-            <div class="step-card" data-num="2">
-                <div class="step-icon">🎬</div>
-                <h3>Creators make content</h3>
-                <p>Real UK creators browse your bounty, buy or receive your product, and film authentic content. No briefing calls needed. No agency in the middle.</p>
-            </div>
-            <div class="step-card" data-num="3">
-                <div class="step-icon">📊</div>
-                <h3>Pay only for verified views</h3>
-                <p>Your budget unlocks only when views are tracked and verified across TikTok, Instagram Reels, and YouTube Shorts. Zero upfront risk.</p>
-            </div>
-        </div>
-
-        <div class="how-steps" id="how-creator">
-            <div class="step-card" data-num="1">
-                <div class="step-icon">🔍</div>
-                <h3>Browse brand bounties</h3>
-                <p>Find products you genuinely like from UK brands. No follower minimum, no pitching, no media kit required. If you create good content, you qualify.</p>
-            </div>
-            <div class="step-card" data-num="2">
-                <div class="step-icon">📱</div>
-                <h3>Create and post</h3>
-                <p>Film your video, post it to TikTok, Instagram Reels, or YouTube Shorts. Submit your tracking link through Brandvalley. That's it.</p>
-            </div>
-            <div class="step-card" data-num="3">
-                <div class="step-icon">💷</div>
-                <h3>Earn as views roll in</h3>
-                <p>Your earnings grow in real-time as your content gets watched. The better your content performs, the more you make. No negotiations. Ever.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- WHY -->
-<section class="section why-section">
-    <div class="section-inner">
-        <span class="section-tag">Why Brandvalley</span>
-        <h2 class="section-title">Built differently.<br>For a reason.</h2>
-        <p class="section-sub">Every decision we've made is designed to fix something broken about the current system.</p>
-        <div class="why-grid">
-            <div class="why-card">
-                <div class="why-icon why-icon-purple">💰</div>
-                <h3>Performance-only pricing</h3>
-                <p>No upfront fees. No flat rates. Brands pay a CPM only when content is watched. It's the only pricing model where everyone's incentives point the same direction.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-icon why-icon-gold">⚖️</div>
-                <h3>ASA-compliant by default</h3>
-                <p>UK regulations require all paid content to be clearly disclosed. We auto-check every post for #ad compliance before it goes live — so brands never carry legal risk.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-icon why-icon-green">🌍</div>
-                <h3>Multi-platform tracking</h3>
-                <p>TikTok, Instagram Reels, YouTube Shorts — all tracked in one dashboard. We're not dependent on a single platform or its API policy decisions.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-icon why-icon-purple">🇬🇧</div>
-                <h3>Built for the UK market</h3>
-                <p>US platforms like Bounty don't understand UK regulation, UK creator culture, or UK payment infrastructure. We do. This is built here, for here.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-icon why-icon-gold">⚡</div>
-                <h3>No minimums, no gatekeeping</h3>
-                <p>Any creator who makes good content can earn. Any brand with a product can run a campaign. We've removed every barrier that makes traditional influencer marketing slow and expensive.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-icon why-icon-green">📈</div>
-                <h3>Content you can reuse</h3>
-                <p>Every video created through Brandvalley comes with usage rights. Run the best-performing content as paid ads. Your UGC library grows automatically.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- COMPLIANCE -->
-<div class="compliance-banner">
-    <h2>The UK has strict rules.<br>We make compliance effortless.</h2>
-    <p>The ASA and CMA require clear sponsorship disclosure on all paid and gifted content. Non-compliance can result in public takedown orders and fines. Brandvalley checks every post automatically — before it goes live.</p>
-    <div class="compliance-tags">
-        <span class="compliance-tag">✓ ASA compliant</span>
-        <span class="compliance-tag">✓ CMA guidelines</span>
-        <span class="compliance-tag">✓ #ad auto-check</span>
-        <span class="compliance-tag">✓ GDPR ready</span>
-    </div>
-</div>
-
-<!-- WAITLIST -->
 <section class="waitlist-section" id="waitlist">
     <div class="waitlist-box">
-        <h2>Get early access</h2>
-        <p>We're launching with a small group of UK brands and creators. Join the waitlist and we'll be in touch personally.</p>
-
+        <h2 style="margin-bottom:20px; text-align:center;">Join the Waitlist</h2>
         <form id="signup-form">
-            <div class="role-toggle">
-                <input type="radio" name="role" id="role-brand" value="brand" checked onchange="toggleCompany(true)">
-                <label for="role-brand">I'm a Brand</label>
-                <input type="radio" name="role" id="role-creator" value="creator" onchange="toggleCompany(false)">
-                <label for="role-creator">I'm a Creator</label>
+            <div class="how-tabs" style="margin-bottom:24px;">
+                <input type="radio" name="role" id="role-brand" value="brand" checked style="display:none;">
+                <div class="how-tab active" id="tab-brand" onclick="setRole('brand')">Brand</div>
+                
+                <input type="radio" name="role" id="role-creator" value="creator" style="display:none;">
+                <div class="how-tab" id="tab-creator" onclick="setRole('creator')">Creator</div>
             </div>
 
-            <div class="form-field">
-                <label for="name">Full name</label>
-                <input type="text" id="name" placeholder="Your name" required>
-            </div>
-            <div class="form-field">
-                <label for="email">Email address</label>
-                <input type="email" id="email" placeholder="you@example.com" required>
-            </div>
-            <div class="form-field" id="company-field">
-                <label for="company">Company or brand name</label>
-                <input type="text" id="company" placeholder="Your brand">
+            <div style="margin-bottom:15px;">
+                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:5px;">Full Name</label>
+                <input type="text" id="name" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:6px;" required>
             </div>
 
-            <button type="submit" class="submit-btn" id="submit-btn">Join the waitlist →</button>
-            <p class="form-note">No spam. We'll only reach out about early access.</p>
+            <div style="margin-bottom:15px;">
+                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:5px;">Email</label>
+                <input type="email" id="email" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:6px;" required>
+            </div>
+
+            <div id="company-field" style="margin-bottom:20px;">
+                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:5px;">Brand/Company Name</label>
+                <input type="text" id="company" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:6px;" required>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">Secure My Spot →</button>
         </form>
 
-        <div id="thank-you" class="hidden">
-            <div class="ty-emoji">🎉</div>
-            <h3>You're on the list!</h3>
-            <p>Thanks for joining Brandvalley. We'll be in touch with early access details very soon.</p>
+        <div id="thank-you" class="hidden" style="text-align:center; padding:20px;">
+            <h3 style="font-family:'Libre Baskerville';">You're on the list!</h3>
+            <p>We'll be in touch with your invitation shortly.</p>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-    <div class="footer-inner">
-        <a class="footer-logo" href="#">Brand<span>valley</span></a>
-        <p>© 2026 Brandvalley · Built in the UK</p>
-        <div class="footer-links">
-            <a href="mailto:hello@brandvalley.co.uk">hello@brandvalley.co.uk</a>
-            <a href="#">Privacy</a>
-        </div>
-    </div>
-</footer>
-
 <script>
-    // Nav scroll effect
+    // Navbar Scroll
     window.addEventListener('scroll', () => {
-        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
     });
 
-    // How it works tab toggle
-    function switchHow(role, btn) {
+    // Unified Role Switcher (Fixes the logic bug)
+    function setRole(role) {
+        // Update Radios
+        document.getElementById('role-' + role).checked = true;
+        
+        // Update Tab Visuals
         document.querySelectorAll('.how-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.how-steps').forEach(s => s.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('how-' + role).classList.add('active');
-    }
+        document.getElementById('tab-' + role).classList.add('active');
 
-    // Company field toggle
-    function toggleCompany(show) {
+        // Toggle Company Field
         const field = document.getElementById('company-field');
         const input = document.getElementById('company');
-        if (show) {
+        
+        if (role === 'brand') {
             field.classList.remove('hidden');
             input.setAttribute('required', 'required');
         } else {
@@ -715,36 +206,18 @@
         }
     }
 
-    // Set role from CTA buttons
-    function setRole(role) {
-        const radio = document.getElementById('role-' + role);
-        if (radio) { radio.checked = true; toggleCompany(role === 'brand'); }
-    }
-
-    // Scroll-triggered fade-in
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'translateY(0)'; } });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.step-card, .why-card, .problem-card').forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(el);
-    });
-
-    // Form submit with Formspree
+    // Form Submission
     document.getElementById('signup-form').addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = document.getElementById('submit-btn');
-        btn.textContent = 'Submitting...';
+        btn.textContent = 'Registering...';
         btn.disabled = true;
 
         const data = {
             role: document.querySelector('input[name="role"]:checked').value,
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
-            company: document.getElementById('company').value,
+            company: document.getElementById('company').value || 'Individual Creator',
         };
 
         try {
@@ -757,14 +230,15 @@
                 this.classList.add('hidden');
                 document.getElementById('thank-you').classList.remove('hidden');
             } else {
-                btn.textContent = 'Something went wrong — try again';
+                btn.textContent = 'Error - Try Again';
                 btn.disabled = false;
             }
         } catch {
-            btn.textContent = 'Connection error — try again';
+            btn.textContent = 'Connection Error';
             btn.disabled = false;
         }
     });
 </script>
+
 </body>
 </html>
