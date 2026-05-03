@@ -85,7 +85,7 @@
 
         /* ── WASTE SECTION (new) ── */
         .waste-section { background: var(--black2); }
-        .waste-vs { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: start; margin-bottom: 60px; }
+        .waste-vs { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: stretch; margin-bottom: 60px; }
         .waste-col { background: var(--card-bg); border: 1px solid var(--border2); border-radius: 14px; padding: 32px; }
         .waste-col.bad { border-color: rgba(239,68,68,0.2); }
         .waste-col.good { border-color: var(--border); }
@@ -98,7 +98,7 @@
         .wdot-bad  { background: rgba(239,68,68,0.15); color: #f87171; }
         .wdot-good { background: rgba(52,211,153,0.15); color: #34d399; }
         .waste-item p { font-size: 13.5px; color: var(--grey); line-height: 1.6; }
-        .vs-divider { display: flex; align-items: center; justify-content: center; padding-top: 60px; }
+        .vs-divider { display: flex; align-items: center; justify-content: center; padding-top: 0; }
         .vs-badge { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--purple); background: rgba(123,47,255,0.12); border: 1px solid var(--border); border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
 
         /* VIRAL ENGINE (new) */
@@ -252,7 +252,7 @@
             </div>
         </div>
     </div>
-    <p class="hero-sub">No upfront spend. No flat fees. No flukes. Just content that performs — and pay that reflects it.</p>
+    <p class="hero-sub">We give creators everything they need to make content that goes viral — and we give brands the creators most likely to make it happen.</p>
     <div class="hero-ctas">
         <a href="#waitlist" class="btn btn-purple" onclick="setRole('creator')">I'm a Creator</a>
         <a href="#waitlist" class="btn btn-ghost" onclick="setRole('brand')">I'm a Brand</a>
@@ -278,22 +278,26 @@
 <!-- THE WASTE SECTION -->
 <section class="waste-section">
     <div class="container">
-        <span class="section-tag">The old way vs the right way</span>
-        <h2 class="section-title">Flat fees are broken.<br>Upfront spend is a gamble.</h2>
-        <p class="section-sub">The current system charges brands before results happen and pays creators the same whether a video gets 100 views or 1 million. We fixed both.</p>
+        <span class="section-tag">The real cost of doing it the old way</span>
+        <h2 class="section-title">Agents waste time.<br>Commitments waste money.</h2>
+        <p class="section-sub">Every day, UK creators lose hours to pitching agents who take 20–30% cuts. Every week, UK brands commit budgets to campaigns that might be a fluke. HypeNex ends both.</p>
         <div class="waste-vs">
             <div class="waste-col bad reveal">
                 <span class="waste-col-tag tag-old">❌ The old way</span>
-                <div class="waste-item"><div class="wdot wdot-bad">✕</div><p>Brands pay upfront — no guarantee, no refund if it flops</p></div>
-                <div class="waste-item"><div class="wdot wdot-bad">✕</div><p>Creators get a flat fee — same pay whether it gets 500 views or 500k</p></div>
-                <div class="waste-item"><div class="wdot wdot-bad">✕</div><p>No content guidance — creators post in the dark, brands hope for the best</p></div>
+                <div class="waste-item"><div class="wdot wdot-bad">✕</div><p>Creators spend weeks chasing agents who take 20–30% of every deal — before a single video is made</p></div>
+                <div class="waste-item"><div class="wdot wdot-bad">✕</div><p>Brands commit £5,000–£50,000 upfront to campaigns with no performance guarantee — a fluke becomes an invoice</p></div>
+                <div class="waste-item"><div class="wdot wdot-bad">✕</div><p>Creators post in the dark — no trending data, no hashtag guidance, no brief that actually helps content perform</p></div>
+                <div class="waste-item"><div class="wdot wdot-bad">✕</div><p>Brands spend days finding the right creator — browsing profiles, checking engagement, negotiating rates</p></div>
+                <div class="waste-item"><div class="wdot wdot-bad">✕</div><p>If content flops, brands lose their entire budget. If it succeeds, creators still got paid the same flat rate.</p></div>
             </div>
             <div class="vs-divider"><div class="vs-badge">VS</div></div>
             <div class="waste-col good reveal">
                 <span class="waste-col-tag tag-new">✓ The HypeNex way</span>
-                <div class="waste-item"><div class="wdot wdot-good">✓</div><p>Brands pay per 1,000 verified views — not a penny before content performs</p></div>
-                <div class="waste-item"><div class="wdot wdot-good">✓</div><p>Creators earn more when content goes viral — the model rewards quality</p></div>
-                <div class="waste-item"><div class="wdot wdot-good">✓</div><p>Every campaign comes with trending data and content direction built in</p></div>
+                <div class="waste-item"><div class="wdot wdot-good">✓</div><p>Creators earn directly — no agents, no middlemen. Every view pays. More views means more money, no cap.</p></div>
+                <div class="waste-item"><div class="wdot wdot-good">✓</div><p>Brands set a CPM and pay only when views are verified. Zero upfront commitment. Zero wasted budget.</p></div>
+                <div class="waste-item"><div class="wdot wdot-good">✓</div><p>Creators get trending hashtags, content direction, and brand briefs designed to maximise viral potential</p></div>
+                <div class="waste-item"><div class="wdot wdot-good">✓</div><p>Brands browse creators by niche, engagement rate, and past performance — all in one place, instantly</p></div>
+                <div class="waste-item"><div class="wdot wdot-good">✓</div><p>When content goes viral, creators earn more automatically. Everyone wins when it works.</p></div>
             </div>
         </div>
     </div>
@@ -304,22 +308,35 @@
     <div class="container">
         <span class="section-tag">The HypeNex difference</span>
         <h2 class="section-title">We don't just connect you.<br>We set you up to win.</h2>
-        <p class="section-sub">Trending tools, smart matching, and a model that rewards performance. Not just a marketplace.</p>
+        <p class="section-sub">Every creator on HypeNex gets more than a brand deal. They get the intelligence to make content that actually travels.</p>
         <div class="viral-grid">
-            <div class="viral-card reveal">
-                <div class="vc-icon">🔥</div>
-                <h3>Trending tools, built in</h3>
-                <p>Hashtags, content angles, and briefs that are working right now — so creators aren't posting blind.</p>
+            <div class="viral-card featured reveal">
+                <div class="viral-featured-text">
+                    <span class="vc-tag">Creator success engine</span>
+                    <h3>A studied path to viral content — built into every campaign</h3>
+                    <p>Most UGC platforms hand you a brief and wish you luck. HypeNex gives you trending hashtags for your niche, content angles that are performing right now, and a brand brief designed to give your video the best possible shot at going viral. You still make the content. We make sure you're not flying blind.</p>
+                </div>
+                <div class="viral-featured-visual">
+                    <div class="viral-step"><span class="viral-step-num">01</span><p><strong>Trending hashtags</strong> for your niche, updated in real-time</p></div>
+                    <div class="viral-step"><span class="viral-step-num">02</span><p><strong>Content angles</strong> that are performing this week across TikTok & Reels</p></div>
+                    <div class="viral-step"><span class="viral-step-num">03</span><p><strong>Brand brief</strong> written to feel native — not like an ad</p></div>
+                    <div class="viral-step"><span class="viral-step-num">04</span><p><strong>Performance tracking</strong> so you know what's working and can do more of it</p></div>
+                </div>
             </div>
             <div class="viral-card reveal">
                 <div class="vc-icon">🎯</div>
-                <h3>The right match, instantly</h3>
-                <p>No scrolling through profiles. HypeNex surfaces the right creators for each brand — by niche and performance.</p>
+                <h3>Right creator, right brand — instantly</h3>
+                <p>Brands don't scroll through thousands of profiles. HypeNex surfaces the creators most likely to perform for their product — by niche, audience, and past content data.</p>
+            </div>
+            <div class="viral-card reveal">
+                <div class="vc-icon">📈</div>
+                <h3>Everyone wins when it works</h3>
+                <p>Flat fees mean a viral video pays the same as a flop. On HypeNex, if your content goes viral, your earnings go up automatically. The model rewards quality.</p>
             </div>
             <div class="viral-card reveal">
                 <div class="vc-icon">♻️</div>
-                <h3>Content that keeps earning</h3>
-                <p>Usage rights included. The best videos become paid ads — so great content keeps generating value.</p>
+                <h3>Content that keeps working</h3>
+                <p>Brands get usage rights to every video. The best-performing organic content becomes paid ads — so the content that works keeps generating return long after posting.</p>
             </div>
         </div>
     </div>
@@ -334,17 +351,19 @@
         <div class="problem-split">
             <div class="split-header reveal">
                 <span class="split-tag tag-creator">If you're a Creator</span>
-                <h3>Great content. Not enough reward.</h3>
-                <div class="prob-item"><div class="prob-dot"></div><p>No follower minimum? Brands still ignore you.</p></div>
-                <div class="prob-item"><div class="prob-dot"></div><p>500k views or 500 — same flat rate either way.</p></div>
-                <div class="prob-item"><div class="prob-dot"></div><p>No direction, no data, no real shot at going viral.</p></div>
+                <h3>Your content is worth more than you're being paid</h3>
+                <div class="prob-item"><div class="prob-dot"></div><p>Brands only talk to you if you have 10k+ followers — even if your content outperforms bigger accounts</p></div>
+                <div class="prob-item"><div class="prob-dot"></div><p>You spend more time pitching than creating — and agents take a cut before you see a penny</p></div>
+                <div class="prob-item"><div class="prob-dot"></div><p>A video that gets 500k views pays the same flat rate as one that gets 500</p></div>
+                <div class="prob-item"><div class="prob-dot"></div><p>You post without direction — no data on what's trending, no brief designed to help you go viral</p></div>
             </div>
             <div class="split-header reveal">
                 <span class="split-tag tag-brand">If you're a Brand</span>
-                <h3>Big spend. Uncertain returns.</h3>
-                <div class="prob-item"><div class="prob-dot"></div><p>You pay per post — not per view. Flukes cost the same as hits.</p></div>
-                <div class="prob-item"><div class="prob-dot"></div><p>Finding the right creator takes days. Negotiating takes longer.</p></div>
-                <div class="prob-item"><div class="prob-dot"></div><p>ASA compliance is your problem — until something goes wrong.</p></div>
+                <h3>You're paying for promises, not performance</h3>
+                <div class="prob-item"><div class="prob-dot"></div><p>You pay per post or per follower — not per actual view. A fluke campaign still costs the same as a hit</p></div>
+                <div class="prob-item"><div class="prob-dot"></div><p>Finding the right creator takes days of manual research, DMs, and negotiations that go nowhere</p></div>
+                <div class="prob-item"><div class="prob-dot"></div><p>Agencies charge 30–50% and still can't tell you whether the campaign actually worked</p></div>
+                <div class="prob-item"><div class="prob-dot"></div><p>ASA compliance is your legal responsibility — but no one checks until something goes wrong</p></div>
             </div>
         </div>
     </div>
@@ -355,7 +374,7 @@
     <div class="container">
         <span class="section-tag">How it works</span>
         <h2 class="section-title">One platform.<br>Both sides win.</h2>
-        <p class="section-sub">Post a bounty. Make content. Get paid per view. That's it.</p>
+        <p class="section-sub">HypeNex connects brands with creators — and gives both sides everything they need to succeed.</p>
         <div class="how-toggle">
             <button class="how-tab active" onclick="switchHow('creator',this)">For Creators</button>
             <button class="how-tab" onclick="switchHow('brand',this)">For Brands</button>
@@ -380,12 +399,12 @@
         <h2 class="section-title">Built differently.<br>On purpose.</h2>
         <p class="section-sub">Every decision is designed to fix something broken about the current system — for both sides.</p>
         <div class="why-grid">
-            <div class="why-card reveal"><span class="why-num">01 —</span><h3>Performance-only pricing</h3><p>Brands pay CPM only when content is watched. Simple, fair, aligned.</p></div>
-            <div class="why-card reveal"><span class="why-num">02 —</span><h3>ASA-compliant by default</h3><p>We auto-check every post for #ad compliance before it goes live. Zero legal risk for brands.</p></div>
-            <div class="why-card reveal"><span class="why-num">03 —</span><h3>Multi-platform tracking</h3><p>TikTok, Instagram Reels, YouTube Shorts — one dashboard, no platform risk.</p></div>
-            <div class="why-card reveal"><span class="why-num">04 —</span><h3>Built for the UK</h3><p>UK regulation, UK creators, UK payments. Built here, for here.</p></div>
-            <div class="why-card reveal"><span class="why-num">05 —</span><h3>No gatekeeping, no agents</h3><p>Good content is the only requirement. No gatekeepers, no minimums.</p></div>
-            <div class="why-card reveal"><span class="why-num">06 —</span><h3>Content that keeps working</h3><p>Every video includes usage rights. Best performers become paid ads automatically.</p></div>
+            <div class="why-card reveal"><span class="why-num">01 —</span><h3>Performance-only pricing</h3><p>No flat fees. No follower minimums. Brands pay CPM only when content is watched. Everyone's incentives align.</p></div>
+            <div class="why-card reveal"><span class="why-num">02 —</span><h3>ASA-compliant by default</h3><p>UK law requires disclosure on paid content. We auto-check every post before it goes live. Brands carry zero legal risk.</p></div>
+            <div class="why-card reveal"><span class="why-num">03 —</span><h3>Multi-platform tracking</h3><p>TikTok, Instagram Reels, YouTube Shorts — all tracked in one dashboard. No single-platform dependency.</p></div>
+            <div class="why-card reveal"><span class="why-num">04 —</span><h3>Built for the UK</h3><p>US platforms don't understand UK regulation, UK creators, or UK payment infrastructure. We do.</p></div>
+            <div class="why-card reveal"><span class="why-num">05 —</span><h3>No gatekeeping, no agents</h3><p>Any creator who makes good content can earn. Any brand with a product can run a campaign. We cut out the middlemen entirely.</p></div>
+            <div class="why-card reveal"><span class="why-num">06 —</span><h3>Content that keeps working</h3><p>Every video comes with usage rights. Run top-performing content as paid ads. Your UGC library builds itself.</p></div>
         </div>
     </div>
 </section>
@@ -394,7 +413,7 @@
 <div class="compliance-section">
     <div class="container">
         <h2>The UK has strict rules.<br>We make compliance effortless.</h2>
-        <p>UK law requires #ad disclosure on every paid post. HypeNex checks automatically — before anything goes live.</p>
+        <p>The ASA and CMA require clear sponsorship disclosure on all paid content. HypeNex auto-checks every post before it goes live — so your brand is always protected, automatically.</p>
         <div class="compliance-tags">
             <span class="c-tag">✓ ASA compliant</span>
             <span class="c-tag">✓ CMA guidelines</span>
